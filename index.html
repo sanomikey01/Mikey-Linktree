@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@SANOMIKEY01 Links</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+  
+  body {
+    margin: 0;
+    font-family: Poppins,sans-serif;
+    color: #fff;
+    text-align: center;
+    background: #0f0f0f;
+    overflow-x: hidden;
+  }
+
+  #particles-js { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    z-index: -1; 
+  }
+
+  .profile { margin-top: 50px; }
+  .profile img { 
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    border: 4px solid #06f; 
+    box-shadow: 0 0 20px #06f,0 0 40px #06f; 
+    animation: pulse 3s infinite; 
+    object-fit: cover; 
+  }
+  @keyframes pulse { 
+    0% {box-shadow:0 0 20px #06f,0 0 40px #06f;} 
+    50% {box-shadow:0 0 40px #06f,0 0 80px #06f;} 
+    100% {box-shadow:0 0 20px #06f,0 0 40px #06f;} 
+  }
+
+  h1 { margin: 15px 0 30px; font-size: 22px; font-weight: 700; text-transform: uppercase; }
+
+  .links { display: flex; flex-direction: column; align-items: center; gap: 15px; margin-bottom: 50px; }
+  .link-btn { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 200px; 
+    padding: 12px; 
+    background: #111; 
+    border: 2px solid #06f; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    color: #fff; 
+    font-size: 16px; 
+    font-weight: 500; 
+    position: relative; 
+    overflow: hidden; 
+    transition: all 0.3s ease; 
+  }
+  .link-btn::before { 
+    content: ""; 
+    position: absolute; 
+    top: 0; 
+    left: -100%; 
+    width: 100%; 
+    height: 100%; 
+    background: linear-gradient(120deg, transparent, rgba(0,255,255,0.3), transparent); 
+    transition: all 0.5s ease; 
+  }
+  .link-btn:hover::before { left: 100%; }
+  .link-btn:hover { background: #06f; color: #fff; box-shadow: 0 0 20px #06f; }
+
+  .link-btn i {
+    vertical-align: middle;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  /* Keep your existing mobile responsiveness */
+  @media (max-width: 480px) {
+    .link-btn {
+      width: 80%;
+      padding: 10px;
+      font-size: 15px;
+    }
+  }
+
+  /* Extra responsiveness for tablets and large screens without changing design */
+  @media (max-width: 768px) { /* Tablets */
+    .profile img { width: 90px; height: 90px; }
+    h1 { font-size: 20px; }
+  }
+  @media (min-width: 1200px) { /* Large desktops/TVs */
+    .profile img { width: 120px; height: 120px; }
+    h1 { font-size: 24px; }
+  }
+
+  footer { margin: 30px 0; font-size: 12px; color: #aaa; }
+
+  #clock {
+    font-family: monospace;
+    color: #0ff;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <div class="profile">
+    <img src="https://i.postimg.cc/zVv7zRmK/MIKEY.jpg" alt="Profile">
+    <h1>@SANOMIKEY01</h1>
+  </div>
+
+  <div class="links">
+    <a class="link-btn" href="https://www.youtube.com/channel/UCGP_qVLWJ_xGPrNqghMXkSQ" target="_blank">
+      <i class="fab fa-youtube"></i> YouTube
+    </a>
+    <a class="link-btn" href="https://www.tiktok.com/@sanomikey01" target="_blank">
+      <i class="fab fa-tiktok"></i> TikTok
+    </a>
+    <a class="link-btn" href="https://www.instagram.com/sanomikey01/?hl=en" target="_blank">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+    <a class="link-btn" href="https://discord.gg/dZJRd7x5tU" target="_blank">
+      <i class="fab fa-discord"></i> Discord Server
+    </a>
+  </div>
+
+  <div id="clock"></div>
+  <footer>© 2025 @sanomikey01 | All Rights Reserved</footer>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: { 
+        number: { value: 80 }, 
+        size: { value: 3 }, 
+        move: { speed: 2 }, 
+        line_linked: { enable: true }, 
+        color: { value: "#06f" } 
+      },
+      interactivity: { 
+        events: { onhover: { enable: true, mode: "repulse" } } 
+      }
+    });
+
+    function updateClock() {
+      const clock = document.getElementById('clock');
+      const now = new Date();
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
+      let ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12;
+      minutes = minutes < 10 ? '0'+minutes : minutes;
+      clock.textContent = hours + ':' + minutes + ' ' + ampm;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
